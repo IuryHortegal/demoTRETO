@@ -384,5 +384,5 @@ function capitalize(word) {
 window.onload = () => {
     loadSectors();
     loadLinks();
-    loadLinkPanel(); // Chamar o método para carregar o painel de links
+    loadLinkPanel(); // Chamar o mé
 };

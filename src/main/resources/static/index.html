@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Network</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Task Network</h1>
+
+<h2>Gerenciar Setores</h2>
+<div>
+  <input id="sector-name" type="text" placeholder="Nome do Setor">
+  <button onclick="addSector()">Adicionar Setor</button>
+</div>
+
+<h2>Adicionar Tarefas</h2>
+<div>
+  <input id="task-title" type="text" placeholder="Título da Tarefa">
+  <select id="sector-select">
+    <option value="" disabled selected>Selecione um setor</option>
+  </select>
+  <button onclick="addTask()">Adicionar Tarefa</button>
+</div>
+
+<h2>Setores e Tarefas</h2>
+<table id="sector-table" border="1">
+  <thead>
+  <tr>
+    <th>Setor</th>
+    <th>Tarefas</th>
+    <th>Ações</th>
+  </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<h2>Gerenciar Links</h2>
+<div>
+  <input id="link-name" type="text" placeholder="Nome do Link">
+  <input id="link-url" type="text" placeholder="URL do Link">
+  <button onclick="addLink()">Adicionar Link</button>
+</div>
+
+<table id="link-table" border="1">
+  <thead>
+  <tr>
+    <th>Nome</th>
+    <th>URL</th>
+    <th>Ações</th>
+  </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<!-- Painel de Links -->
+<h2>Painel de Links</h2>
+<div id="link-panel" style="display: flex; flex-wrap: wrap; gap: 20px;">
+  <!-- Os links representados por ícones e nomes serão inseridos aqui dinamicamente -->
+</div>
+
+<style>
+  #link-panel div:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+  }
+
+  #link-panel div:hover div {
+    background-color: #3e8e41; /* Escurece o ícone ao passar o mouse */
+  }
+</style>
+
+<!-- Painel de Folgas Calculadas -->
+<h2>Horas de Folgas Calculadas</h2>
+<table id="folga-table" border="1">
+  <thead>
+  <tr>
+    <th>Horas Trabalhadas</th>
+    <th>Tipo de Dia</th>
+    <th>Horas de Folga</th>
+    <th>Dia da Semana e Data</th>
+  </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<h2>Calculadora de Folgas</h2>
+<div>
+  <label for="worked-hours">Horas trabalhadas:</label>
+  <input id="worked-hours" type="number" placeholder="Horas trabalhadas">
+
+  <label for="day-type">Tipo de dia:</label>
+  <select id="day-type">
+    <option value="" disabled selected>Selecione o dia</option>
+    <option value="feriado">Feriado</option>
+    <option value="sabado">Sábado</option>
+    <option value="domingo">Domingo</option>
+  </select>
+
+  <button onclick="calculateFolga()">Calcular Folgas</button>
+</div>
+
+<h3>Total de Folgas:</h3>
+<p id="total-folgas">0 horas</p>
+</body>
+</html>
